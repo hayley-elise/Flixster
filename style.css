@@ -1,1 +1,138 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+body {
+    background-color: black;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#H1-header {
+    color: #fce9cc;
+    font-size: 100px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    text-shadow: 3px 2px 5px #fdb62f, 4px 4px 8px #de0418;
+
+    background-color: #3b0606;
+    backdrop-filter: blur(10px);
+    
+    border-top: 5px double #fdb62f;
+    border-bottom: 5px double #fdb62f;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#form-H1-div {
+    margin-top: -7%;
+
+    background-image: linear-gradient(#3b0606, black);
+}
+
+form {
+    padding-right: 5%;
+
+    text-align: right;
+}
+
+#H1-nowPlaying {
+    margin-top: 1%;
+
+    padding-left: 15%;
+    padding-bottom: 2.5%;
+
+    color: #fce9cc;
+    font-size: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 4px 2px 5px #de0418, 6px 5px 8px #fdb62f;
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid white;
+    border-bottom-left-radius: 25%;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#Search-Button {
+    padding: 1%;
+    
+    width: 9%;
+
+    color: #fce9cc;
+    font-family: 'Times New Roman', Times, serif;
+
+    background-color: black;
+
+    border: 1.5px solid #fce9cc;
+    border-radius: 4px;
+
+    box-shadow: 2px 0.5px 5px #fce9cc;
+}
+
+#Search-Bar {
+    margin-top: 4.5%;
+
+    padding: 1%;
+
+    width: 22%;    
+
+    color: #fce9cc;
+    font-family: 'Times New Roman', Times, serif;
+
+    background-color: black;
+
+    border: 1.5px solid #fce9cc;
+    border-radius: 5px;
+
+    box-shadow: 2px 0.5px 5px #fce9cc;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#Search-Button:hover {
+    color: #fdb62f;
+
+    background-color: #3b0606;
+
+    border: 1.5px solid #fdb62f;
+
+    box-shadow: 0 2.5px 6px white;
+
+    transition: all 0.2s ease-in-out;
+}
+
+#Search-Button:active {
+    transform: translateY(4px);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#Search-Bar:hover, #Search-Bar:focus {
+    background-color: #3b0606;
+
+    border: 1.5px solid #fdb62f;
+
+    box-shadow: 0 2.5px 6px white;
+
+    transition: all 0.2s ease-in-out;
+}
+
+#Search-Bar:active {
+    transform: translateY(4px);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+::placeholder {
+    color: #fce9cc;
+    font-size: 15px;
+    text-align: center;
+
+    opacity: 0.5;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+footer {
+    text-align: center;
+}
