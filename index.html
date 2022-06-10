@@ -26,7 +26,7 @@
 <body>
 
     <div id="header-Div">
-        <h1 id="H1-header"> Flixter <img src="images/popcorn_64x64.png"> </h1>
+        <h1 id="H1-header"> Flixter <img src="images/popcorn_64x64.png" alt="popcorn"> </h1>
     </div>
 
     <div id="form-H1-div">
@@ -39,17 +39,20 @@
             <!-- Search button -->
             <button type="submit" id="Search-Button" onclick="Search"> Find Movies </button>
         </form>
-    
-        <h1 id="H1-nowPlaying"> Now Playing: </h1>
+        <h1 id="H1-nowPlaying" hidden> Now Playing: </h1>
     </div>
 
-    <div class="Results" id="results-Div"></div>
+    <div id="movie-grid"></div>
+
+    <div id="more-results">
+        <button id="load-More"> More Movies... </button>
+    </div> 
 
     <br><br><br><br><br><br>
-    <footer> <img src="images/TMDB_logo.svg" width="20%" height="20%"> </footer>
+    <footer> <img src="images/TMDB_logo.svg" width="35%" height="35%" alt="TMDB logo"> </footer>
     
     <!-- JavaScript -->
-    <script src="script.js"> </script>
+    <script src="script.js"></script>
 
 </body>
 
