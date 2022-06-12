@@ -1,52 +1,94 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang= "en">
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta  charset= "UTF-8">
+    <meta  http-equiv= "X-UA-Compatible"  content= "IE=edge">
+    <meta  name= "viewport"  content= "width= device-width, initial-scale= 1">
+
 
     <title> Hayley S. - Project I </title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS file -->
+    <link  rel= "stylesheet"  href= "style.css">
+
+
+    <!-- page header -->
+    <div  id= "header">
+        <h1  id= "Flixter"> 
+            Flixter
+            <img  id= "popcorn"  alt= "popcorn"  src= "images/popcorn_85x85.png">  
+        </h1>
+    </div>
 
 </head>
 
 
 <body>
 
-    <div id="header-Div">
-        <h1 id="H1-header"> Flixter <img src="images/popcorn_64x64.png" alt="popcorn"> </h1>
-    </div>
+    <!-- all search elements & display text -->
+    <div  id= "content-div">
 
-    <div id="form-H1-div">
-        <form id="Form">
-            <!-- Search bar -->
-            <br><br><br><br> 
-            <label for="Search-Bar" id="Search-Label"> Find all the latest movies currently in theaters. </label>
+        <!-- all search elements -->
+        <form  id= "form">
+
+            <!-- search bar display text -->
+            <label  id= "search-display-text"  for= "search-input"> 
+                Search the site: 
+            </label>
+
             <br>
-            <input type="text" id="Search-Bar" value="" placeholder="Search Flixter...">
-            <!-- Search button -->
-            <button type="submit" id="Search-Button" onclick="Search"> Find Movies </button>
-        </form>
-        <h1 id="H1-nowPlaying" hidden> Now Playing: </h1>
-    </div>
 
-    <div id="movie-grid"></div>
+            <!-- clear search button -->
+            <button  id= "close-search-btn"  title= "Clear search"  onclick= "document.getElementById(search-input).value= ''"> 
+                x 
+            </button>
 
-    <div id="more-results">
-        <button id="load-More"> More Movies </button>
+            <!-- search bar -->
+            <input  id= "search-input"  title= "Enter keyword/movie title"  type= "text"  
+            placeholder= "Search Flixter..."  value="">
+
+            <!-- submit search button -->
+            <button  id= "search-btn"  type= "submit"  onclick= "SubmitEvent"> 
+                Find Movies 
+            </button>
+            
+        </form> <!-- end form -->
+
+
+        <!-- "now playing" display text -->
+        <h1  hidden  id= "H1-nowPlaying"> 
+            Now Playing: 
+        </h1>
+
+        <!-- "search input value" empty display text -->
+        <h1  hidden  id= "H1-searchResults"></h1>
+
+    </div> <!-- end content-div -->
+
+
+    <!-- empty div to display future movies -->
+    <div  id= "movies-grid"></div>
+
+    <!-- load more movies button -->
+    <div  id= "more-movies">
+        <button  id= "load-more-movies-btn"> 
+            More Movies 
+        </button>
     </div> 
 
-    <br><br><br><br><br><br>
-    <footer> <img src="images/TMDB_logo.svg" width="35%" height="35%" alt="TMDB logo"> </footer>
+    <!-- TMDB logo for attribute -->
+    <div  id= "footer">
+        <img  alt= "TMDB logo"  src= "images/TMDB_logo.svg"  width="55%"  height="35%"> 
+    </div>
     
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <!-- JavaScript file -->
+    <script  src= "script.js"></script>
 
 </body>
+
 
 </html>

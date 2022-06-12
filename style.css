@@ -1,67 +1,127 @@
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   QUICK CSS REMINDERS:  */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+/*  referencing TAG TYPES:            tag                    */
+/*  referencing CLASSES:              .class                 */
+/*  referencing ID NAMES:             #id                    */
+/*  referencing PSUEDO_CLASSES:       :psuedo-class          */
+/*  referencing PSUEDO_ELEMENTS:      ::psuedo-element       */
+
+/*  GROUP REFERENCES: add comma 
+EXAMPLES:  
+(tag1, tag2, ...);  (.class1, .class2, ...);  (#id1, #id2, ...);  
+(tag, .class, #id, ...);  (tag:psuedo-class, .class:psuedo-class, #id:psuedo-class, ...);
+(tag::psuedo-element, .class::psuedo-element, #id::psuedo-element, ...);  etc.
+*/
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   HIDDEN CLASS   */
+.hidden {
+    display: none;
+  }
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   BODY   */
 body {
     display: grid;
-    background-color: black;
+    /* background-color: black; */
+    background-image: linear-gradient(#3b0606, black, black, black, black, black, black, black);
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-#H1-header {
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   DIV CONTAINING PAGE HEADER + ICON ~ HEADER TAG   */
+#header {
+    width: auto;
+    height: auto;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   FLIXTER TITLE  */
+#Flixter {
+    position: static;
+    padding-top: 2%;
+    padding-bottom: 2%;
+
     color: #fce9cc;
     font-size: 150px;
+    letter-spacing: 20px;
     font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
     text-align: center;
-    text-shadow: 3px 2px 5px #fdb62f, 4px 4px 8px #de0418;
+    text-shadow: 7px 2px 5px #fdb62f, 14px 4px 8px #de0418;
 
     background-color: #3b0606;
     
-    border-top: 6px double #fdb62f;
-    border-bottom: 6px double #fdb62f;
+    border-top: 6.5px double #fdb62f;
+    border-bottom: 6.5px double #fdb62f;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#popcorn {
+    margin-left: -2%;
+    transform: skew(-12deg);
+}
 
-#form-H1-div {
-    margin-top: -4.2%;
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   DIV CONTAINING FORM TAG + DISPLAY TEXTS  */ 
+#content-div {
+    margin-top: -4%;
+    padding-top: 3%;
+
+    width: auto;
+    height: auto;
 
     background-image: linear-gradient(#3b0606, black);
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-form {
-    padding-right: 5%;
-
-    text-align: right;
-}
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-#H1-nowPlaying {
-    margin-top: 2%;
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* DISPLAY TEXTS ~ INSIDE DIV/OUTSIDE FORM TAG */
+#H1-nowPlaying, #H1-searchResults {
+    margin-top: 6%;
 
     padding-left: 18%;
     padding-bottom: 2.5%;
 
     color: #fce9cc;
-    font-size: 80px;
+    font-size: 85px;
     font-family: 'Times New Roman', Times, serif;
     text-shadow: 4px 2px 5px #de0418, 6px 5px 8px #fdb62f;
 
-    border-bottom: 1px solid white;
-    border-bottom-left-radius: 25%;
+    border-bottom: 1px solid #fce9cc;
+    border-bottom-left-radius: 27%;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-#Search-Button {
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   FORM TAG CONTAINING ALL SEARCH ELEMENTS   */
+form {
+    padding-right: 3.5%;
+
+    -webkit-perspective: 1000;
+
+    text-align: right;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   SEARCH/CLOSE BUTTONS   */
+#search-btn {
+    z-index: -0.5;
+    position: relative;
     margin-left: -1%;
     padding: 1%;
-    width: 10%;
+    width: auto;
 
     color: #fce9cc;
-    font-size: 1px;
+    font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
 
@@ -73,56 +133,85 @@ form {
     box-shadow: 0 0.5px black, 0 0 5px #fce9cc;
 }
 
-#Search-Button:hover {
+#close-search-btn {
+    z-index: -0.5;
+    position: relative;
+    padding: 1%;
+    width: 2.7%;
+
+    color: #fce9cc;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+
+    background-color: black;
+
+    border: 1.5px solid #fce9cc;
+    border-radius: 3px;
+
+    box-shadow: 0 0.5px black, 0 0 5px #fce9cc;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   PSUEDO-CLASSES   */
+#search-btn:hover, #close-search-btn:hover {
     color: #fdb62f;
 
     background-color: #3b0606;
 
     border: 1.5px solid #fdb62f;
 
-    box-shadow: 0 1.5px 6px white;
+    box-shadow: 0 2.5px 6px #fdb62f;
+
+    -webkit-perspective: 1000;
 
     transition: all 0.2s ease-in-out;
+    transform: translateZ(8px);
 }
 
-#Search-Button:active {
-    transform: translateY(1.5px);
+#search-btn:active, #close-search-btn:active {
+    transform: translateY(4px);
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-#Search-Bar {
-    margin-top: 3%;
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   SEARCH BAR   */
+#search-input {
+    margin-top: 1%;
     margin-right: 0.5%;
+    margin-left: -0.5%;
+    margin-bottom: 1.5%;
+
     padding: 1%;
-    width: 25%;    
+    width: 35%;    
 
     color: #fce9cc;
-    font-size: 1px;
+    font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
 
     background-color: black;
 
     border: 1.5px solid #fce9cc;
     border-right: black;
+    border-left: black;
     border-radius: 3px;
 
     box-shadow: 0 0.5px black, 0 0 5px #fce9cc;
 }
 
-#Search-Bar:hover, #Search-Bar:focus {
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   PSUEDO-CLASSES   */
+#search-input:hover, #search-input:focus {
     border: 1.5px solid #fdb62f;
-    border-right: none;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-#Search-Label {
-    margin-right: 15%;
-    padding: 0.5%;
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   SEARCH DISPLAY TEXT   */
+#search-display-text {
+    margin-right: 25%;
 
     color: #fce9cc;
-    font-size: 38px;
+    font-size: 50px;
     font-family: 'Times New Roman', Times, serif;
     text-shadow: 0 0 15px #fdb62f;
 
@@ -131,29 +220,33 @@ form {
     border-bottom-right-radius: 5%;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   PLACEHOLDER TEXT   */
 ::placeholder {
     color: #fce9cc;
-    font-size: 15px;
+    font-size: 35px;
     text-align: center;
 
     opacity: 0.5;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-#movie-grid {
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   EMPTY DIV CONTAINING MOVIES   */
+#movies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 510px);
-    column-gap: 32px;
+
+    grid-template-columns: repeat(auto-fill, 550px);
+    column-gap: 33px;
     grid-template-rows: 1000px;
     justify-content: center;
+    
     width: 100%;
+    height: auto;
     -webkit-perspective: 1000;
 
-    color: #fce9cc;
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     text-shadow: 3px 5px 8px #fdb62f;
@@ -161,37 +254,72 @@ form {
     background: transparent;
 }
 
-#movie-card {
-    margin-bottom: 50px;
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   MOVIE CARDS   */
+.movie-cards {
+    margin-bottom: 60px;
     border-bottom: 1px solid #fce9cc;
 }
 
-#movie-card:hover {
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   PSUEDO-CLASSES   */
+.movie-cards:hover {
     transform: translateZ(15px);
     transition: all 0.5s ease-in-out;
 
     box-shadow: 0 5.5px 5px #fdb62f;    
 }
 
-p1 {
-    color: #fdb62f;
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   MOVIE INFO ~ INSIDE CARD DIV   */
+#movie-info {
+    margin-bottom: 10px;
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   MOVIE INFO CLASSES   */
+
+/*   MOVIE TITLE   */
+.movie-title {
+    color: #fdb62f;
+
+    border-bottom: 1px solid;
+    border-bottom-left-radius: 8%;
+    border-bottom-right-radius: 8%;
+
+}
+/*   API DATA TITLE   */
+.movie-release-date, .movie-votes {
+    color: #fce9cc;
+}
+/*   MOVIE DATA FROM API   */
 p3 {
     color:#de0418;
     text-shadow: 3px 5px 8px red;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-#load-More {
-    margin-left: 46%;
-    margin-top: 100px;
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   CONTAINS MORE MOVIES BUTTON   */
+#more-movies {
+    -webkit-perspective: 1000;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*  MORE MOVIES BUTTON   */
+#load-more-movies-btn {
+    margin-left: 40%;
+    margin-top: 200px;
+    margin-bottom: 10%;
     padding: 1%;
-    width: auto;
+    width: 20%;
 
     color: #fce9cc;
-    font-size: 25px;
+    font-size: 35px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
 
@@ -203,30 +331,34 @@ p3 {
     box-shadow: 0 0.5px black, 0 0 5px #fce9cc;
 }
 
-#load-More:hover {
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   PSUEDO-CLASSES   */
+#load-more-movies-btn:hover {
     color: #fdb62f;
 
     background-color: #3b0606;
 
     border: 1.5px solid #fdb62f;
 
-    box-shadow: 0 1.5px 6px white;
+    box-shadow: 0 5.5px 6px #fdb62f;
 
-    transition: all 0.2s ease-in-out;
+    transform: translateZ(15px);
+    transition: all 0.5s ease-in-out;
 }
 
-#load-More:active {
-    transform: translateY(3px);
+#load-more-movies-btn:active {
+    transform: translateY(10px);
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-footer {
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*   FOOTER DIV   */
+#footer {
+    background: none;
+
     text-align: center;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.hidden {
-    display: none;
-  }
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
