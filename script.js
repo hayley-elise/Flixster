@@ -49,6 +49,7 @@ async function nowPlaying() {
 // -----------------------------------------
 // SUBMITTING SEARCH RESULTS FUNCTION/EVENT LISTENER
 
+// with Find Movies button
 search_form.addEventListener("submit", (event) => {
 
     // keeps page from reloading
@@ -62,6 +63,25 @@ search_form.addEventListener("submit", (event) => {
 
     // calls function to display search results
     movieResults(event)
+
+})
+
+// with Enter key
+search_form.addEventListener("keypress", function(event) {
+
+    if (event.code === "Enter") {
+        // keeps page from reloading
+        event.preventDefault()
+        
+        // empties the movie grid
+        movies_grid.innerHTML = ""
+
+        // resets page to 1
+        page = 1
+
+        // calls function to display search results
+        movieResults(event)
+    }
 
 })
 
