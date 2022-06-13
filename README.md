@@ -1,5 +1,3 @@
-📝 `NOTE` Use this template to initialize the contents of a README.md file for your application. As you work on your assignment over the course of the week, update the required or stretch features lists to indicate which features you have completed by changing `[ ]` to `[x]`. (🚫 Remove this paragraph before submitting your assignment.)
-
 ## Week 1 Assignment: Flixster
 
 Submitted by: **Hayley Simmons**
@@ -23,7 +21,7 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
   - The button should have an id of `load-more-movies-btn`.
   - When clicked, the page should not refresh.
   - New movies should simply be added to the bottom
-- [ ] Allow users to search for movies and display them in a grid view
+- [X] Allow users to search for movies and display them in a grid view
   - There should be a search input element with an id of `search-input`
   - Users should be able to type into the input
   - When a user hits 'Enter', it should send a search request to the movies API
@@ -54,11 +52,11 @@ The labs definitely did introduce various topics needed to complete the assignme
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-I would love to get the search working at the bare minimum. If I had, then I would've liked to be able to sort the movies by trending, in theaters, by genre, etc.
+If I had more time, then I would've liked to be able to sort the movies by trending, in theaters, by genre, etc.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-I had a much harder time implementing the back-end over the interface. I thought it would be much simpler than t really was, considering everyone else managed to get the bare minimum features working. 
+I had a much harder time implementing the back-end over the interface. I thought it would be much simpler than t really was, considering everyone else managed to get the bare minimum features working faily quickly. 
 
 ### Open-source libraries used
 
