@@ -10,8 +10,8 @@ const api_key = "29ad49e172fb431f874b79cbe0ae49de"
 let h1_nowPlaying = document.getElementById("H1-nowPlaying")
 let h1_searchResults = document.getElementById("H1-searchResults")
 // search elements
-const query = document.getElementById("search-input").value
 let search_input = document.getElementById("search-input")
+let search_query = document.getElementById("search-input").value
 let search_btn = document.getElementById("search-btn")
 let close_search_btn = document.getElementById("close-search-btn")
 // movie grid
@@ -22,6 +22,12 @@ let load_more_movies_btn = document.getElementById("load-more-movies-btn")
 
 // other
 let page = 1
+
+
+// -----------------------------------------
+// SEARCH BUTTON EVENT LISTENER
+
+search_btn.addEventListener("submit", submitSearch)
 
 // -----------------------------------------
 // "NOW PLAYING" MOVIE LIST FUNCTION
@@ -44,35 +50,34 @@ async function nowPlaying() {
 }
 
 // -----------------------------------------
-// SUBMITTING SEARCH RESULTS EVENT LISTENER
+// SUBMITTING SEARCH RESULTS FUNCTION
 
-search_input.addEventListener("submit", (event) => {
-
-    // keeps page from reloading
-    event.preventDefault()
-    
-    // calls function to display search results
-    movieResults(event)
-
-})
-
-// -----------------------------------------
-// **UNFINISHED** DISPLAYING SEARCH RESULTS FUNCTION
-
-async function movieResults(event) {
+function submitSearch(event) {
 
     // keeps page from reloading
     event.preventDefault()
 
     // empties the movie grid
     movies_grid.innerHTML = ""
+    
+    // resets page to 1
+    page = 1
 
-    // ** IF STATEMENTS FOR LINES 73-87 **
+    // calls function to display search results
+    movieResults(event)
+
+}
+
+// -----------------------------------------
+// **UNFINISHED** DISPLAYING SEARCH RESULTS FUNCTION
+
+async function movieResults(search_query) {
+
+    // ** NEED IF STATEMENTS FOR LINES 73-87 **
 
     // (if search input CAN be found, ...)
-    // ~~~~~~~~~~~~~
     // gets matching movies from value entered in search bar
-    let response = await fetch(`https://api.themoviedb.org/3/search/multi?api_key=${api_key}&language=en-US&query=${query}&page=${page}&include_adult=true`)
+    let response = await fetch(`https://api.themoviedb.org/3/search/multi?api_key=${api_key}&language=en-US&query=${search_query}&page=${page}&include_adult=true`)
     let responseData = await response.json()
     
     // displays search results
@@ -85,8 +90,8 @@ async function movieResults(event) {
     h1_searchResults.hidden = false
 
     // changes display text to include the search value entered 
-    h1_searchResults.innerHTML += `Showing results for: ${query}:`
-    // ~~~~~~~~~~~~~
+    h1_searchResults.innerHTML += `Showing results for: ${search_query}:`
+
 
     // if statement #2 (if search input CANNOT be found, ...)
     // ~~~~~~~~~~~~~
@@ -127,15 +132,19 @@ function displayResults(movieData) {
 }
 
 // -----------------------------------------
-// MORE MOVIES EVENT LISTENER
+// LOAD MORE MOVIES FUNCTION
 
 load_more_movies_btn.addEventListener("click", () => {
 
     // goes to next page on "now playing" page 
-    page += 1
+    page ++
 
-    // calls function to display "now playing" page
-    nowPlaying()
+    // if nothing was searched, loads more "now playing" movies; otherwise loads more search results
+    if (search_query !== "") {
+        movieResults(search_query)
+    } else {
+        nowPlaying()
+    }
 
 })
 
