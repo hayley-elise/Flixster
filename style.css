@@ -205,10 +205,6 @@ form {
     border: 1.5px solid #fdb62f;
 }
 
-#search-input::selection {
-    background-color: black;
-}
-
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*   SEARCH DISPLAY TEXT   */
 #search-display-text {
@@ -241,16 +237,14 @@ form {
 #movies-grid {
     display: grid;
 
-    grid-template-columns: repeat(auto-fill, 550px);
-    column-gap: 33px;
-    grid-template-rows: 1050px;
+    grid-template-columns: repeat(auto-fill, 580px);
+    column-gap: 30px;
+    grid-auto-rows: 1250px;
     justify-content: center;
     
     width: 100%;
-    height: auto;
     -webkit-perspective: 1000;
 
-    font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     text-shadow: 3px 5px 8px #fdb62f;
@@ -260,9 +254,13 @@ form {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*   MOVIE CARDS   */
 .movie-cards {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
     background: black;
 
-    margin-bottom: 60px;
+    border-top: 1px solid #fce9cc;
     border-bottom: 1px solid #fce9cc;
 }
 
@@ -278,29 +276,36 @@ form {
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*   MOVIE INFO ~ INSIDE CARD DIV   */
-#movie-info {
-    margin-bottom: 10px;
-}
+/* #movie-info {
+
+} */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*   MOVIE INFO CLASSES   */
 
-/*   MOVIE TITLE   */
 .movie-title {
     color: #fdb62f;
+    font-size: 45px;
 
     border-bottom: 1px solid;
     border-bottom-left-radius: 8%;
     border-bottom-right-radius: 8%;
 
 }
+
+.movie-poster {
+    max-width: 100%;
+    height: auto;
+}
 /*   API DATA TITLE   */
 .movie-release-date, .movie-votes {
     color: #fce9cc;
+    font-size: 35px;
 }
 /*   MOVIE DATA FROM API   */
 p3 {
     color:#de0418;
+    font-size: 40px;
     text-shadow: 3px 5px 8px red;
 }
 

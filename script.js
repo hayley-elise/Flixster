@@ -123,26 +123,27 @@ async function movieResults(search_query) {
 function displayResults(movieData) {
 
     // creates new div inside existing empty div, then displays movie info on page
+    let posterImage = "http://image.tmdb.org/t/p/w500" + movieData.poster_path
     movies_grid.innerHTML += `
         <div  class= "movie-cards">
-            <img  class= "movie-poster"  title= "${movieData.original_title}"  src= "http://image.tmdb.org/t/p/w500${movieData.poster_path}"
+            <img  class= "movie-poster"  title= "${movieData.title == null ? "Not available" : movieData.title}"  src= "${movieData.poster_path == null ? "no-image-icon.png" : posterImage}"
             
             <div  id= "movie-info">
                 <br>
 
-                <p1  class= "movie-title"> ${movieData.original_title} </p1>
+                <p1  class= "movie-title"> ${movieData.title == null ? "Not available" : movieData.title} </p1>
 
                 <br><br>
 
-                <p2  class= "movie-release-date"> Released Date: </p2>
-                <p3> ${movieData.release_date} </p3>
+                <p2  class= "movie-release-date"> Release Date: </p2>
+                <p3> ${movieData.release_date == null ? "Not available" : movieData.release_date} </p3>
 
                 <br>
 
                 <p2  class= "movie-votes"> Rating: </p2>
-                <p3>  ${movieData.vote_average}/10  <img  alt= "star"  src= "images/star.png"> </p3>
+                <p3>  ${movieData.vote_average == null ? "Not available" : movieData.vote_average + "/10"}  <img  alt= "star"  src= "images/star.png"> </p3>
                 
-                <br><br>
+                <br>
             </div>
 
         </div> `
@@ -159,8 +160,8 @@ load_more_movies_btn.addEventListener("click", () => {
     page ++
 
     // if nothing was searched, loads more "now playing" movies; otherwise loads more search results
-    if (search_query !== "") {
-        movieResults(search_query)
+    if (search_input.value != "") {
+        movieResults(search_input.value)
     } else {
         nowPlaying()
     }
