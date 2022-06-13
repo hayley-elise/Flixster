@@ -3,6 +3,7 @@
 
 // API
 const api_key = "29ad49e172fb431f874b79cbe0ae49de"
+const language = "en-US"
 
 // DOM elements:
 // ~~~~~~~~~~~~~
@@ -10,8 +11,8 @@ const api_key = "29ad49e172fb431f874b79cbe0ae49de"
 let h1_nowPlaying = document.getElementById("H1-nowPlaying")
 let h1_searchResults = document.getElementById("H1-searchResults")
 // search elements
+let search_form = document.getElementById("form")
 let search_input = document.getElementById("search-input")
-let search_query = document.getElementById("search-input").value
 let search_btn = document.getElementById("search-btn")
 let close_search_btn = document.getElementById("close-search-btn")
 // movie grid
@@ -25,11 +26,6 @@ let page = 1
 
 
 // -----------------------------------------
-// SEARCH BUTTON EVENT LISTENER
-
-search_btn.addEventListener("submit", submitSearch)
-
-// -----------------------------------------
 // "NOW PLAYING" MOVIE LIST FUNCTION
 
 async function nowPlaying() {
@@ -39,7 +35,7 @@ async function nowPlaying() {
     h1_searchResults.hidden = true
 
     // gets movies from "now playing" page
-    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=en-US&page=${page}&include_adult=true`)
+    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=${language}&page=${page}&include_adult=true`)
     const responseData = await response.json()
     
     // displays each movie on page
@@ -49,35 +45,40 @@ async function nowPlaying() {
 
 }
 
-// -----------------------------------------
-// SUBMITTING SEARCH RESULTS FUNCTION
 
-function submitSearch(event) {
+// -----------------------------------------
+// SUBMITTING SEARCH RESULTS FUNCTION/EVENT LISTENER
+
+search_form.addEventListener("submit", (event) => {
 
     // keeps page from reloading
     event.preventDefault()
-
+    
     // empties the movie grid
     movies_grid.innerHTML = ""
-    
+
     // resets page to 1
     page = 1
 
     // calls function to display search results
     movieResults(event)
 
-}
+})
+
 
 // -----------------------------------------
 // **UNFINISHED** DISPLAYING SEARCH RESULTS FUNCTION
 
 async function movieResults(search_query) {
 
+    // assigns the value entered into search bar
+    search_query = search_input.value
+
     // ** NEED IF STATEMENTS FOR LINES 73-87 **
 
     // (if search input CAN be found, ...)
     // gets matching movies from value entered in search bar
-    let response = await fetch(`https://api.themoviedb.org/3/search/multi?api_key=${api_key}&language=en-US&query=${search_query}&page=${page}&include_adult=true`)
+    let response = await fetch(`https://api.themoviedb.org/3/search/multi?api_key=${api_key}&language=${language}&query=${search_query}&page=${page}&include_adult=true`)
     let responseData = await response.json()
     
     // displays search results
@@ -90,7 +91,7 @@ async function movieResults(search_query) {
     h1_searchResults.hidden = false
 
     // changes display text to include the search value entered 
-    h1_searchResults.innerHTML += `Showing results for: ${search_query}:`
+    h1_searchResults.innerHTML = `Showing results for ${search_query}:`
 
 
     // if statement #2 (if search input CANNOT be found, ...)
@@ -98,6 +99,7 @@ async function movieResults(search_query) {
     // start here
 
 }
+
 
 // -----------------------------------------
 // ADDING MOVIES TO PAGE FUNCTION
@@ -131,8 +133,9 @@ function displayResults(movieData) {
 
 }
 
+
 // -----------------------------------------
-// LOAD MORE MOVIES FUNCTION
+// LOAD MORE MOVIES FUNCTION/EVENT LISTENER
 
 load_more_movies_btn.addEventListener("click", () => {
 
@@ -148,6 +151,7 @@ load_more_movies_btn.addEventListener("click", () => {
 
 })
 
+
 // -----------------------------------------
 // ONLOAD FUNCTION 
 
@@ -157,3 +161,4 @@ window.onload = function() {
     nowPlaying()
 
 }
+

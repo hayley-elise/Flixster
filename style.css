@@ -205,6 +205,10 @@ form {
     border: 1.5px solid #fdb62f;
 }
 
+#search-input::selection {
+    background-color: black;
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*   SEARCH DISPLAY TEXT   */
 #search-display-text {
@@ -239,7 +243,7 @@ form {
 
     grid-template-columns: repeat(auto-fill, 550px);
     column-gap: 33px;
-    grid-template-rows: 1000px;
+    grid-template-rows: 1050px;
     justify-content: center;
     
     width: 100%;
@@ -250,14 +254,14 @@ form {
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
     text-shadow: 3px 5px 8px #fdb62f;
-
-    background: transparent;
 }
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*   MOVIE CARDS   */
 .movie-cards {
+    background: black;
+
     margin-bottom: 60px;
     border-bottom: 1px solid #fce9cc;
 }
