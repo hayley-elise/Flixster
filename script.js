@@ -67,6 +67,22 @@ search_form.addEventListener("submit", (event) => {
 
 
 // -----------------------------------------
+// CLEAR SEARCH RESULTS FUNCTION/EVENT HANDLER
+
+close_search_btn.addEventListener("click", () => {
+    
+    // clears text in search bar
+    search_input.value = ""
+
+    // clears search results
+    movies_grid.innerHTML = ``
+
+    // goes back to "now playing" screen
+    nowPlaying()
+
+})
+
+// -----------------------------------------
 // **UNFINISHED** DISPLAYING SEARCH RESULTS FUNCTION
 
 async function movieResults(search_query) {
