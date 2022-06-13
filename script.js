@@ -161,7 +161,7 @@ function displayResults(movieData) {
                 <br>
 
                 <p2  class= "movie-votes"> Rating: </p2>
-                <p3>  ${movieData.vote_average == null ? "Not available" : movieData.vote_average + "/10"}  <img  alt= "star"  src= "images/star.png"> </p3>
+                <p3>  ${movieData.vote_average == null ? "Not available" : movieData.vote_average + "/10  <img  alt= star  src= images/star.png> "} </p3>
                 
                 <br>
             </div>
