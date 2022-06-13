@@ -33,7 +33,7 @@ async function nowPlaying() {
     h1_searchResults.hidden = true
 
     // gets movies from "now playing" page
-    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=en-US`)
+    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=en-US&page=${page}&include_adult=true`)
     const responseData = await response.json()
     
     // displays each movie on page
@@ -72,7 +72,7 @@ async function movieResults(event) {
     // (if search input CAN be found, ...)
     // ~~~~~~~~~~~~~
     // gets matching movies from value entered in search bar
-    let response = await fetch(`https://api.themoviedb.org/3/search/multi?api_key=${api_key}&language=en-US&query=${query.toLowerCase()}&page=${page}&include_adult=true`)
+    let response = await fetch(`https://api.themoviedb.org/3/search/multi?api_key=${api_key}&language=en-US&query=${query}&page=${page}&include_adult=true`)
     let responseData = await response.json()
     
     // displays search results
@@ -127,8 +127,7 @@ function displayResults(movieData) {
 }
 
 // -----------------------------------------
-// **UNFINISHED** LOAD MORE MOVIES EVENT LISTENER
-// function currently re-adds the movies already on the page
+// MORE MOVIES EVENT LISTENER
 
 load_more_movies_btn.addEventListener("click", () => {
 
