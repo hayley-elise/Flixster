@@ -41,7 +41,7 @@ body {
     padding-bottom: 2.5%;
 
     color: #fce9cc;
-    font-size: 9.5vw;
+    font-size: 9vw;
     letter-spacing: 20px;
     font-family: 'Times New Roman', Times, serif;
     font-style: oblique;
@@ -70,7 +70,7 @@ body {
     z-index: 1000;
 
     width: 100%;
-    height: 100%;
+    height: auto;
 
     background-image: linear-gradient(#3b0606, black);
 
