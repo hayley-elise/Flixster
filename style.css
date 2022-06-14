@@ -29,37 +29,25 @@ EXAMPLES:
 /*   BODY   */
 body {
     display: grid;
-    /* background-color: black; */
-    background-image: linear-gradient(#3b0606, black, black, black, black, black, black, black);
+    padding-bottom: 15%;
+    background-color: black;
 }
 
 
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*   DIV CONTAINING PAGE HEADER + ICON ~ HEADER TAG   */
-#header {
-    width: auto;
-    height: auto;
-}
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*   FLIXTER TITLE  */
+/*   FLIXTER TITLE ~ INSIDE CONTENT DIV */
 #Flixter {
-    position: static;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding-bottom: 2.5%;
 
     color: #fce9cc;
-    font-size: 150px;
+    font-size: 9.5vw;
     letter-spacing: 20px;
     font-family: 'Times New Roman', Times, serif;
     font-style: oblique;
     text-align: center;
     text-shadow: 7px 2px 5px #fdb62f, 14px 4px 8px #de0418;
-
-    background-color: #3b0606;
     
-    border-top: 6.5px double #fdb62f;
     border-bottom: 6.5px double #fdb62f;
 }
 
@@ -73,26 +61,32 @@ body {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*   DIV CONTAINING FORM TAG + DISPLAY TEXTS  */ 
 #content-div {
-    margin-top: -4%;
-    padding-top: 3%;
+    position: absolute;
 
-    width: auto;
-    height: auto;
+    left: 50%;
+    margin-left: -50%;
+    top: 0;
+    padding-bottom: -5%;
+    z-index: 1000;
+
+    width: 100%;
+    height: 100%;
 
     background-image: linear-gradient(#3b0606, black);
+
+    border-top: 3.5px solid #fdb62f;
 }
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* DISPLAY TEXTS ~ INSIDE DIV/OUTSIDE FORM TAG */
 #H1-nowPlaying, #H1-searchResults {
-    margin-top: 6%;
-
+    padding-top: 2.8%;
     padding-left: 18%;
-    padding-bottom: 2.5%;
+    padding-bottom: 3%;
 
     color: #fce9cc;
-    font-size: 85px;
+    font-size: 4.5vw;
     font-family: 'Times New Roman', Times, serif;
     text-shadow: 4px 2px 5px #de0418, 6px 5px 8px #fdb62f;
 
@@ -104,7 +98,7 @@ body {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*   FORM TAG CONTAINING ALL SEARCH ELEMENTS   */
 form {
-    padding-right: 3.5%;
+    padding-right: 4%;
 
     -webkit-perspective: 1000;
 
@@ -115,10 +109,15 @@ form {
 /*   SEARCH/CLOSE BUTTONS   */
 #search-btn {
     z-index: -0.5;
+
     position: relative;
+    
     margin-left: -1%;
     padding: 1%;
+
     width: auto;
+
+    cursor: pointer;
 
     color: #fce9cc;
     font-size: 30px;
@@ -136,8 +135,12 @@ form {
 #close-search-btn {
     z-index: -0.5;
     position: relative;
+    left: 46px;
+
     padding: 1%;
-    width: 2.7%;
+    width: 2.9%;
+
+    cursor: pointer;
 
     color: #fce9cc;
     font-size: 30px;
@@ -146,10 +149,8 @@ form {
 
     background-color: black;
 
-    border: 1.5px solid #fce9cc;
+    border: none;
     border-radius: 3px;
-
-    box-shadow: 0 0.5px black, 0 0 5px #fce9cc;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -177,17 +178,16 @@ form {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*   SEARCH BAR   */
 #search-input {
-    margin-top: 1%;
     margin-right: 0.5%;
     margin-left: -0.5%;
-    margin-bottom: 1.5%;
 
     padding: 1%;
-    width: 35%;    
+    width: 32%;    
 
     color: #fce9cc;
     font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
+    text-align: center;
 
     background-color: black;
 
@@ -206,26 +206,10 @@ form {
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*   SEARCH DISPLAY TEXT   */
-#search-display-text {
-    margin-right: 25%;
-
-    color: #fce9cc;
-    font-size: 50px;
-    font-family: 'Times New Roman', Times, serif;
-    text-shadow: 0 0 15px #fdb62f;
-
-    border-bottom: 0.75px solid #fce9cc;
-    border-bottom-left-radius: 5%;
-    border-bottom-right-radius: 5%;
-}
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*   PLACEHOLDER TEXT   */
 ::placeholder {
     color: #fce9cc;
-    font-size: 35px;
-    text-align: center;
+    font-size: 30px;
 
     opacity: 0.5;
 }
@@ -238,11 +222,14 @@ form {
     display: grid;
 
     grid-template-columns: repeat(auto-fill, 580px);
-    column-gap: 30px;
-    grid-auto-rows: 1250px;
+    column-gap: 28px;
+    grid-auto-rows: 1255px;
     justify-content: center;
+
+    padding-top: 50%;
     
     width: 100%;
+
     -webkit-perspective: 1000;
 
     font-family: 'Times New Roman', Times, serif;
@@ -256,7 +243,8 @@ form {
 .movie-cards {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+
+    margin: 18px;
 
     background: black;
 
@@ -270,62 +258,64 @@ form {
     transform: translateZ(15px);
     transition: all 0.5s ease-in-out;
 
-    box-shadow: 0 5.5px 5px #fdb62f;    
+    box-shadow: 0 10.5px 6px #fdb62f;    
 }
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*   MOVIE INFO ~ INSIDE CARD DIV   */
-/* #movie-info {
-
-} */
+#movie-info {
+    display: flex;
+    flex-direction: column;
+}
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*   MOVIE INFO CLASSES   */
 
 .movie-title {
-    color: #fdb62f;
-    font-size: 45px;
+    display: flex;
+    flex-direction: column;
 
-    border-bottom: 1px solid;
+    margin-top: 50px;
+
+    color: #fdb62f;
+    font-size: 2.5vw;
+
+    border-bottom: 1.5px solid;
     border-bottom-left-radius: 8%;
     border-bottom-right-radius: 8%;
 
 }
 
 .movie-poster {
-    max-width: 100%;
+    max-width: auto;
     height: auto;
 }
 /*   API DATA TITLE   */
 .movie-release-date, .movie-votes {
+    display: flex;
+    flex-direction: column;
+
     color: #fce9cc;
-    font-size: 35px;
+    font-size: 1.5vw;
 }
 /*   MOVIE DATA FROM API   */
 p3 {
     color:#de0418;
-    font-size: 40px;
+    font-size: 2vw;
     text-shadow: 3px 5px 8px red;
 }
 
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*   CONTAINS MORE MOVIES BUTTON   */
-#more-movies {
-    -webkit-perspective: 1000;
-}
-
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /*  MORE MOVIES BUTTON   */
 #load-more-movies-btn {
-    margin-left: 40%;
-    margin-top: 200px;
-    margin-bottom: 10%;
-    padding: 1%;
-    width: 20%;
+    z-index: 100;
+    width: 150%;
+
+    padding: 10%;
+    margin-top: 120%;
 
     color: #fce9cc;
     font-size: 35px;
@@ -338,6 +328,13 @@ p3 {
     border-radius: 3px;
 
     box-shadow: 0 0.5px black, 0 0 5px #fce9cc;
+}
+
+#more-btn-container {
+    margin: auto;
+    margin-left: 42%;
+
+    -webkit-perspective: 1000;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -359,15 +356,47 @@ p3 {
     transform: translateY(10px);
 }
 
-
-
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/*   FOOTER DIV   */
-#footer {
-    background: none;
+/*   TMDB LOGO   */
+#TMDB {
+    position: fixed;
+    bottom: 0;
+    left: 5%;
 
-    text-align: center;
+    cursor: pointer;
+
+    background: transparent;
 }
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#back-to-top {
+    position: fixed;
+    bottom: 15%;
+    left: 85%;
+
+    margin: 1%;
+    padding: 0.5%;
+    padding-top: 1.5%;
+
+    width: 6%;
+
+    cursor: pointer;
+
+    color: #fdb62f;
+    font-size: 3.5vw;
+    text-align: center;
+
+    background-color: black;
+    opacity: 90%;
+
+    border: 0.5px solid #fdb62f;
+    border-radius: 50%;
+}
+
+#back-to-top:hover {
+    box-shadow: 0 0 20px #fce9cc;
+
+    transform: translateZ(15px);
+    transition: all 0.5s ease-in-out;
+}

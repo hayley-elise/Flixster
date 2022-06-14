@@ -15,15 +15,6 @@
     <!-- CSS file -->
     <link  rel= "stylesheet"  href= "style.css">
 
-
-    <!-- page header -->
-    <div  id= "header">
-        <h1  id= "Flixter"> 
-            Flixter
-            <img  id= "popcorn"  alt= "popcorn"  src= "images/popcorn.png">  
-        </h1>
-    </div>
-
 </head>
 
 
@@ -32,23 +23,23 @@
     <!-- all search elements & display text -->
     <div  id= "content-div">
 
+        <!-- page title  (will turn into button later) -->
+        <div  id= "header"> 
+            <h1  id= "Flixter"> 
+                ~ Flixter  <img  id= "popcorn"  alt= "popcorn"  src= "images/popcorn.png"> ~ 
+            </h1>
+        </div>
+
         <!-- all search elements -->
         <form  id= "form">
 
-            <!-- search bar display text -->
-            <label  id= "search-display-text"  for= "search-input"> 
-                Search the site: 
-            </label>
-
-            <br>
-
             <!-- clear search button -->
-            <button  id= "close-search-btn"  title= "Clear search"> 
+            <button  id= "close-search-btn"  title= "Clear Search"> 
                 x 
             </button>
 
             <!-- search bar -->
-            <input  id= "search-input"  title= "Enter keyword/movie title"  type= "text"  
+            <input  id= "search-input"  title= "Enter a keyword/movie title"  type= "text"  
             placeholder= "Search Flixter..."  value="">
 
             <!-- submit search button -->
@@ -70,21 +61,28 @@
     </div> <!-- end content-div -->
 
 
-    <!-- empty div to display future movies -->
+    <!-- div to display future movies -->
     <div  id= "movies-grid"></div>
 
-    <!-- load more movies button -->
-    <div  id= "more-movies">
+    <!-- load more movies/search results button -->
+    <div  id= "more-btn-container"> 
         <button  id= "load-more-movies-btn"> 
             More Movies 
-        </button>
-    </div> 
-
-    <!-- TMDB logo for attribute -->
-    <div  id= "footer">
-        <img  alt= "TMDB logo"  src= "images/TMDB_logo.svg"  width="55%"  height="35%"> 
+        </button> 
     </div>
     
+    <!-- back to top button -->
+    <button  id= "back-to-top"  title= "Back to Top"  onclick= "backToTop()">
+        ^ 
+    </button>
+
+
+    <!-- TMDB Logo, takes you to TMDB website -->
+    <a  href= "https://www.themoviedb.org/">  
+        <img  id= "TMDB"  alt= "TMDB logo"  src= "images/TMDB_logo.svg"  width= "22%"  height= "12%">
+    </a>
+
+
     <!-- JavaScript file -->
     <script  src= "script.js"></script>
 
