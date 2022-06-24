@@ -40,7 +40,7 @@ Deployed Application (optional): [Flixster Deployed Site](https://hayley-elise.g
 
 ### Walkthrough Video
 
-(https://drive.google.com/file/d/1yzZlcOaoOJ_XuVuDC4Nt2EK1Sjvf8E8g/view?usp=sharing)
+(https://www.loom.com/share/c61f466e069c4c168ccd7b7b563f1426)
 
 ### Reflection
 
