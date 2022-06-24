@@ -2,9 +2,9 @@
 
 Submitted by: **Hayley Simmons**
 
-Estimated time spent: **24** hours spent in total
+Estimated time spent: **36** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): [Flixster Deployed Site](https://hayley-elise.github.io/Flixster/)
 
 ### Application Features
 
@@ -40,7 +40,7 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 ### Walkthrough Video
 
-`(https://drive.google.com/file/d/1yzZlcOaoOJ_XuVuDC4Nt2EK1Sjvf8E8g/view?usp=sharing)`
+(https://drive.google.com/file/d/1yzZlcOaoOJ_XuVuDC4Nt2EK1Sjvf8E8g/view?usp=sharing)
 
 ### Reflection
 
